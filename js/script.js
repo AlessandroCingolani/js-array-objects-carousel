@@ -36,6 +36,7 @@ const images = [
 ];
 //     /ARRAY OBJECTS
 
+
 // NEW CICLE FOR CAROUSEL
 images.forEach((element) =>{
   itemsCarousel.innerHTML += `
@@ -60,28 +61,38 @@ thumbItem[0].classList.add('active');
 
 // bottone down
 btnDown.addEventListener('click',function(){
-  
 
-  newItem[counter].classList.add('hide');
-  thumbItem[counter].classList.remove('active');
+  addRemove();
   
   counter++;
+  
   if (counter === newItem.length) counter = 0;
-  newItem[counter].classList.remove('hide');
-  thumbItem[counter].classList.add('active');
+
+  removeAdd();
 })
 
 // bottone  su
 btnUp.addEventListener('click',function(){
     
-  newItem[counter].classList.add('hide');
-  thumbItem[counter].classList.remove('active');
+  addRemove();
 
   counter--;
+
   if(counter < 0) counter = newItem.length -1;
-  newItem[counter].classList.remove('hide');
-  
-  btnDown.classList.remove('hide');
-  thumbItem[counter].classList.add('active');
+
+  removeAdd();
 })
 
+
+// function add/remove
+function addRemove(){
+  newItem[counter].classList.add('hide');
+  thumbItem[counter].classList.remove('active');
+}
+
+
+// function remove/add
+function removeAdd(){
+  newItem[counter].classList.remove('hide');
+  thumbItem[counter].classList.add('active');
+}

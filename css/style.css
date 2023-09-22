@@ -15,6 +15,19 @@
   align-items: center;
 }
 
+.block-carousel {
+  height: 100%;
+  position: relative;
+}
+
+.block-description {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  text-align: right;
+  color: white;
+}
+
 .container {
   width: 50%;
   height: 50%;

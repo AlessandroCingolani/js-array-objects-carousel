@@ -36,6 +36,7 @@ const images = [
 ];
 //     /ARRAY OBJECTS
 
+// NEW CICLE FOR CAROUSEL
 images.forEach((element) =>{
   itemsCarousel.innerHTML += `
   <div class = 'block-carousel newItem hide'>
@@ -46,7 +47,6 @@ images.forEach((element) =>{
     </div>
   </div>`;
   thumbnails.innerHTML += `<img src="${element.image}"class= "thumbItem inactive">`;
-
 })
 
 const newItem = document.getElementsByClassName('newItem');

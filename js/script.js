@@ -37,7 +37,7 @@ const images = [
 //     /ARRAY OBJECTS
 
 
-// NEW CICLE FOR CAROUSEL
+// NEW CAROUSEL WITH OBJECTS AND forEach
 images.forEach((element) =>{
   itemsCarousel.innerHTML += `
   <div class = 'block-carousel newItem hide'>
@@ -59,29 +59,92 @@ const thumbItem = document.getElementsByClassName('thumbItem')
 newItem[0].classList.remove('hide');
 thumbItem[0].classList.add('active');
 
+
 // bottone down
-btnDown.addEventListener('click',function(){
+// btnDown.addEventListener('click',function(){
 
-  addRemove();
-  
-  counter++;
-  
-  if (counter === newItem.length) counter = 0;
+//   addRemove();
 
-  removeAdd();
-})
+//   counter++;
+  
+//   if (counter === newItem.length) counter = 0;
+
+//   removeAdd();
+// })
+
+
+// Auto carousel down btn
+btnDown.addEventListener('click',startDown)
+
+  function startDown(){
+    this.removeEventListener('click',startDown)
+    validCarousel = false;
+    
+    
+    const clock = setInterval(function() {
+        if(!validCarousel){
+  
+        addRemove();
+      
+        counter++;
+        
+        if (counter === newItem.length) counter = 0;
+      
+        removeAdd();
+
+        btnUp.addEventListener('click',startUp);
+
+      }else {
+        clearInterval(clock);
+      }   
+      }, 1000);
+  }
 
 // bottone  su
-btnUp.addEventListener('click',function(){
+// btnUp.addEventListener('click',function(){
     
-  addRemove();
+//   addRemove();
 
-  counter--;
+//   counter--;
 
-  if(counter < 0) counter = newItem.length -1;
+//   if(counter < 0) counter = newItem.length -1;
 
-  removeAdd();
-})
+//   removeAdd();
+// })
+
+// Auto carousel up btn
+btnUp.addEventListener('click',startUp)
+
+  function startUp(){
+    this.removeEventListener('click',startUp)
+    validCarousel = true;
+    
+    
+    const clock = setInterval(function() {
+        if(validCarousel){
+  
+        addRemove();
+      
+        counter--;
+        
+        if(counter < 0) counter = newItem.length -1;
+      
+        removeAdd();
+        
+        btnDown.addEventListener('click',startDown);
+      }else {
+        clearInterval(clock);
+        
+      }   
+      }, 1000);
+  }
+
+
+
+
+
+
+
 
 
 // function add/remove
@@ -96,3 +159,7 @@ function removeAdd(){
   newItem[counter].classList.remove('hide');
   thumbItem[counter].classList.add('active');
 }
+
+ 
+
+

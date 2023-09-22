@@ -61,16 +61,16 @@ thumbItem[0].classList.add('active');
 
 
 // bottone down
-// btnDown.addEventListener('click',function(){
+btnDown.addEventListener('click',function(){
 
-//   addRemove();
+  addRemove();
 
-//   counter++;
+  counter++;
   
-//   if (counter === newItem.length) counter = 0;
+  if (counter === newItem.length) counter = 0;
 
-//   removeAdd();
-// })
+  removeAdd();
+})
 
 
 // Auto carousel down btn
@@ -101,16 +101,16 @@ btnDown.addEventListener('click',startDown)
   }
 
 // bottone  su
-// btnUp.addEventListener('click',function(){
+btnUp.addEventListener('click',function(){
     
-//   addRemove();
+  addRemove();
 
-//   counter--;
+  counter--;
 
-//   if(counter < 0) counter = newItem.length -1;
+  if(counter < 0) counter = newItem.length -1;
 
-//   removeAdd();
-// })
+  removeAdd();
+})
 
 // Auto carousel up btn
 btnUp.addEventListener('click',startUp)
@@ -138,12 +138,6 @@ btnUp.addEventListener('click',startUp)
       }   
       }, 1000);
   }
-
-
-
-
-
-
 
 
 

@@ -37,7 +37,14 @@ const images = [
 //     /ARRAY OBJECTS
 
 images.forEach((element) =>{
-  itemsCarousel.innerHTML += `<img src="${element.image}" class= "newItem hide">`;
+  itemsCarousel.innerHTML += `
+  <div class = 'block-carousel newItem hide'>
+    <img src="${element.image}">
+    <div class = 'block-description'>
+      <h3>${element.title}</h3>
+      <p>${element.text}</p>
+    </div>
+  </div>`;
   thumbnails.innerHTML += `<img src="${element.image}"class= "thumbItem inactive">`;
 
 })

@@ -10,8 +10,6 @@ let counter = 0;
 itemsCarousel.innerHTML = '';
 thumbnails.innerHTML = '';
 
-
-
 //      ARRAY OBJECTS 
 const images = [
   {
@@ -38,16 +36,11 @@ const images = [
 ];
 //     /ARRAY OBJECTS
 
-images.forEach((element) => {
-  itemsCarousel.innerHTML += `
-  <div>
-  <img src = '${element.image}'> 
-  <h3>${element.title}</h3> 
-  <p>${element.text}</p>
-  </div>`
+images.forEach((element) =>{
+  itemsCarousel.innerHTML += `<img src="${element.image}" class= "newItem hide">`;
+  thumbnails.innerHTML += `<img src="${element.image}"class= "thumbItem inactive">`;
 
-}) 
-
+})
 
 const newItem = document.getElementsByClassName('newItem');
 

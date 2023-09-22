@@ -97,7 +97,7 @@ btnDown.addEventListener('click',startDown)
       }else {
         clearInterval(clock);
       }   
-      }, 1000);
+      }, 2000);
   }
 
 // bottone  su
@@ -136,7 +136,7 @@ btnUp.addEventListener('click',startUp)
         clearInterval(clock);
         
       }   
-      }, 1000);
+      }, 2000);
   }
 
 
